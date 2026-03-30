@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gtex — Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <!-- Apenas duas fontes: Space Grotesk (principal) e JetBrains Mono (mono) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+
+    </head>
+
+<body>
+
+    <div id="noise"></div>
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+    <div id="scroll-bar"></div>
+
+    <nav id="side-nav" aria-label="Navegação por seções">
+        <div class="nav-dot active" data-target="home" data-label="Home"></div>
+        <div class="nav-dot" data-target="sobre" data-label="Sobre"></div>
+        <div class="nav-dot" data-target="habilidades" data-label="Skills"></div>
+        <div class="nav-dot" data-target="formacao" data-label="Formação"></div>
+        <div class="nav-dot" data-target="projetos" data-label="Projetos"></div>
+        <div class="nav-dot" data-target="contato" data-label="Contato"></div>
+    </nav>
+
+    <header id="main-header">
+        <a href="#home" class="logo glitch" data-text="gtex">gtex<span>.</span></a>
+        <div style="display: flex; align-items: center;">
+            <div class="nav-links" id="main-nav">
+                <a href="#home" class="nav-link active" data-key="nav_home">Home</a>
+                <a href="#sobre" class="nav-link" data-key="nav_sobre">Sobre</a>
+                <a href="#habilidades" class="nav-link" data-key="nav_skills">Skills</a>
+                <a href="#formacao" class="nav-link" data-key="nav_formacao">Formação</a>
+                <a href="#projetos" class="nav-link" data-key="nav_projetos">Projetos</a>
+                <a href="#contato" class="nav-link" data-key="nav_contato">Contato</a>
+            </div>
+            <button class="lang-toggle" id="langToggle">PT/EN</button>
+            <div class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== HOME ========== -->
+    <section id="home">
+        <div class="home-img reveal-left">
+            <div class="home-img-wrapper">
+                <img src="assets/images/akipfp.jpg" alt="Foto de perfil - gtex"
+                    onerror="this.parentNode.innerHTML='<div class=\'home-img-placeholder\'><i class=\'fas fa-user\'></i></div>'" />
+            </div>
+        </div>
+        <div class="home-content">
+            <p class="home-greeting" data-key="home_greeting">// olá, mundo</p>
+            <h1><span data-key="home_hi">Hi, I'm</span> <span class="name">gtex</span></h1>
+            <div class="typing-wrapper">
+                <span class="type-prefix">$ </span>
+                <span id="typed-text"></span>
+                <span class="typed-cursor"></span>
+            </div>
+            <p class="home-desc" data-key="home_desc">
+                Estudante técnico em <code>Informática</code> pela ETEC — apaixonado por
+                desenvolvimento de software, soluções criativas e tecnologia que impacta pessoas.
+            </p>
+            <div class="home-cta">
+                <a href="#projetos" class="btn btn-primary" data-key="btn_projetos"><i class="fas fa-folder-open"></i>
+                    Ver Projetos</a>
+                <a href="#contato" class="btn btn-secondary" data-key="btn_contato"><i class="fas fa-paper-plane"></i>
+                    Contato</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://discord.com/users/giovendt" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                <a href="https://instagram.com/giovendt" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/giovendt" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('sobre').scrollIntoView({behavior:'smooth'})">
+            <span data-key="scroll">Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ========== SOBRE ========== -->
+    <section id="sobre">
+        <p class="section-label reveal" data-key="sobre_label">Quem sou eu</p>
+        <h2 class="section-title reveal">Sobre <span class="accent" data-key="sobre_title">mim</span></h2>
+        <div class="sobre-grid">
+            <div class="sobre-text reveal-left">
+                <p data-key="sobre_text1">
+                    Sou estudante do <strong>2º ano do Ensino Médio Técnico em Informática</strong>
+                    pela rede ETEC, com foco em desenvolvimento de software e tecnologia.
+                    Tenho experiência prática em <strong>Python</strong>, estou aprendendo
+                    <strong>Java</strong> e me aprofundando em <strong>HTML, CSS e JavaScript</strong>.
+                </p>
+                <p data-key="sobre_text2">
+                    Além do desenvolvimento, tenho contato com áreas como
+                    <strong>banco de dados</strong>, <strong>redes de comunicação</strong>,
+                    <strong>sistemas embarcados</strong> e <strong>suporte em TI</strong> —
+                    o que me dá uma visão ampla do ecossistema tecnológico.
+                </p>
+                <p data-key="sobre_text3">
+                    Meu objetivo é crescer como desenvolvedor, construir projetos que resolvam
+                    problemas reais e, eventualmente, contribuir para a comunidade open source.
+                </p>
+            </div>
+            <div class="about-cards reveal-right">
+                <div class="about-card">
+                    <div class="about-card-icon">🎓</div>
+                    <div class="about-card-content">
+                        <h4 data-key="card1_title">Formação</h4>
+                        <p data-key="card1_text">ETEC — Técnico em Informática · 2º Ano</p>
+                    </div>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-icon">💻</div>
+                    <div class="about-card-content">
+                        <h4 data-key="card2_title">Foco Principal</h4>
+                        <p data-key="card2_text">Desenvolvimento Web & Software</p>
+                    </div>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-icon">🗺️</div>
+                    <div class="about-card-content">
+                        <h4 data-key="card3_title">Localização</h4>
+                        <p data-key="card3_text">Brasil — São Paulo, SP</p>
+                    </div>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-icon">📌</div>
+                    <div class="about-card-content">
+                        <h4 data-key="card4_title">Status</h4>
+                        <p data-key="card4_text">Aberto a projetos & estágios</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HABILIDADES ========== -->
+    <section id="habilidades">
+        <p class="section-label reveal" data-key="skills_label">O que eu sei</p>
+        <h2 class="section-title reveal">Skills <span class="accent" data-key="skills_title">&amp; tools</span></h2>
+        <p class="skills-intro reveal" data-key="skills_intro">Habilidades adquiridas em sala de aula, projetos pessoais
+            e prática contínua — em constante evolução.</p>
+        <div class="skills-grid">
+            <div class="skill-category reveal">
+                <h3 data-key="lang_category">Linguagens</h3>
+                <div class="lang-cards-grid">
+                    <a href="python.html" class="lang-card" data-pct="75">
+                        <div class="lang-header"><span class="lang-name">Python</span><span class="lang-pct">75%</span>
+                        </div>
+                        <div class="lang-bar-bg">
+                            <div class="lang-bar-fill"></div>
+                        </div>
+                    </a>
+                    <a href="java.html" class="lang-card" data-pct="50">
+                        <div class="lang-header"><span class="lang-name">Java</span><span class="lang-pct">50%</span>
+                        </div>
+                        <div class="lang-bar-bg">
+                            <div class="lang-bar-fill"></div>
+                        </div>
+                    </a>
+                    <a href="html-css.html" class="lang-card" data-pct="85">
+                        <div class="lang-header"><span class="lang-name">HTML & CSS</span><span
+                                class="lang-pct">85%</span></div>
+                        <div class="lang-bar-bg">
+                            <div class="lang-bar-fill"></div>
+                        </div>
+                    </a>
+                    <a href="javascript.html" class="lang-card" data-pct="65">
+                        <div class="lang-header"><span class="lang-name">JavaScript</span><span
+                                class="lang-pct">65%</span></div>
+                        <div class="lang-bar-bg">
+                            <div class="lang-bar-fill"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="skill-category reveal">
+                <h3 data-key="infra_category">Infraestrutura</h3>
+                <div class="skill-item" data-pct="60">
+                    <div class="skill-header"><span class="skill-name" data-key="skill_sql">Banco de Dados
+                            (SQL)</span><span class="skill-pct">60%</span></div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-pct="55">
+                    <div class="skill-header"><span class="skill-name" data-key="skill_redes">Redes de
+                            Comunicação</span><span class="skill-pct">55%</span></div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-pct="65">
+                    <div class="skill-header"><span class="skill-name" data-key="skill_so">Sistemas
+                            Operacionais</span><span class="skill-pct">65%</span></div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-pct="50">
+                    <div class="skill-header"><span class="skill-name" data-key="skill_emb">Sistemas
+                            Embarcados</span><span class="skill-pct">50%</span></div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category reveal">
+                <h3 data-key="tools_category">Ferramentas</h3>
+                <div class="skill-item" data-pct="60">
+                    <div class="skill-header"><span class="skill-name">Git &amp; GitHub</span><span
+                            class="skill-pct">60%</span></div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-pct="70">
+                    <div class="skill-header"><span class="skill-name">VS Code</span><span class="skill-pct">70%</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-pct="40">
+                    <div class="skill-header"><span class="skill-name">Linux / CLI</span><span
+                            class="skill-pct">40%</span></div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-pct="55">
+                    <div class="skill-header"><span class="skill-name" data-key="skill_hw">Manutenção de
+                            Hardware</span><span class="skill-pct">55%</span></div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FORMAÇÃO ========== -->
+    <section id="formacao">
+        <p class="section-label reveal" data-key="form_label">Histórico acadêmico</p>
+        <h2 class="section-title reveal">Formação <span class="accent" data-key="form_title">&amp; disciplinas</span>
+        </h2>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <p class="timeline-date" data-key="date1">2026 — Cursando</p>
+                <h3 class="timeline-title" data-key="course1">Ensino Médio Técnico em Informática — ETEC</h3>
+                <p class="timeline-sub" data-key="course1_sub">2º Ano · Programação de Computadores II · Sistemas
+                    Embarcados · Redes</p>
+                <div class="timeline-tags"><span class="tag">Prog. Computadores II</span><span class="tag">Sistemas
+                        Embarcados</span><span class="tag">Suporte a Banco de Dados</span><span class="tag">Redes de
+                        Comunicação</span><span class="tag">Gestão de S.O.</span><span class="tag">Suporte em
+                        Informática</span></div>
+            </div>
+            <div class="timeline-item reveal">
+                <p class="timeline-date" data-key="date2">2025 — Concluído</p>
+                <h3 class="timeline-title" data-key="course2">1º Ano Técnico — Fundamentos de TI</h3>
+                <p class="timeline-sub" data-key="course2_sub">Base em programação, hardware e banco de dados</p>
+                <div class="timeline-tags"><span class="tag">Programação de Computadores I</span><span
+                        class="tag">Instalação e Manutenção</span><span class="tag">Modelagem de BD</span><span
+                        class="tag">Configuração de Aplicativos</span><span class="tag">Suporte ao Usuário</span></div>
+            </div>
+            <div class="timeline-item reveal">
+                <p class="timeline-date" data-key="date3">Em andamento</p>
+                <h3 class="timeline-title" data-key="course3">Projetos &amp; Aprendizado Autodidata</h3>
+                <p class="timeline-sub" data-key="course3_sub">Portfólio pessoal · Scripts Python · Estudos de
+                    JavaScript</p>
+                <div class="timeline-tags"><span class="tag">HTML/CSS</span><span class="tag">Python scripts</span><span
+                        class="tag">Git/GitHub</span><span class="tag">Projetos próprios</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJETOS ========== -->
+    <section id="projetos">
+        <p class="section-label reveal" data-key="proj_label">O que eu construí</p>
+        <h2 class="section-title reveal">Projetos <span class="accent" data-key="proj_title">recentes</span></h2>
+        <div class="projects-grid">
+            <div class="project-card reveal"><span class="project-wip">WIP</span>
+                <div class="project-num">01</div>
+                <h3 class="project-title" data-key="proj1_title">Portfolio Pessoal</h3>
+                <p class="project-desc" data-key="proj1_desc">Este portfólio! Desenvolvido do zero com HTML, CSS puro e
+                    JavaScript vanilla — sem frameworks.</p>
+                <div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                <div class="project-links"><a href="#" class="project-link"><i class="fab fa-github"></i> <span
+                            data-key="code">Código</span></a><a href="#" class="project-link"><i
+                            class="fas fa-external-link-alt"></i> <span data-key="demo">Demo</span></a></div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-num">02</div>
+                <h3 class="project-title" data-key="proj2_title">Scripts Python</h3>
+                <p class="project-desc" data-key="proj2_desc">Automações e scripts utilitários desenvolvidos nas aulas
+                    de Programação de Computadores I e II.</p>
+                <div class="project-tech"><span>Python</span><span>CLI</span></div>
+                <div class="project-links"><a href="#" class="project-link"><i class="fab fa-github"></i> <span
+                            data-key="soon_github">Em breve no github</span></a></div>
+            </div>
+            <div class="project-card reveal"><span class="project-wip" data-key="soon_label">Em breve</span>
+                <div class="project-num">03</div>
+                <h3 class="project-title" data-key="proj3_title">Projeto com Java</h3>
+                <p class="project-desc" data-key="proj3_desc">Aplicação desktop em desenvolvimento como parte do
+                    aprendizado de Java na ETEC.</p>
+                <div class="project-tech"><span>Java</span><span>POO</span></div>
+                <div class="project-links"><a href="#" class="project-link"><i class="fab fa-github"></i> <span
+                            data-key="soon_github">Em breve no github</span></a></div>
+            </div>
+            <div class="project-card reveal"><span class="project-wip">Conceito</span>
+                <div class="project-num">04</div>
+                <h3 class="project-title" data-key="proj4_title">DB Design</h3>
+                <p class="project-desc" data-key="proj4_desc">Modelagem de banco de dados relacional: diagramas ER e
+                    implementação SQL.</p>
+                <div class="project-tech"><span>SQL</span><span>MySQL</span><span>ER Diagram</span></div>
+                <div class="project-links"><a href="#" class="project-link"><i class="fas fa-database"></i> <span
+                            data-key="testing">Em teste</span></a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTATO ========== -->
+    <section id="contato">
+        <p class="section-label reveal" data-key="contact_label">Fale comigo</p>
+        <h2 class="section-title reveal">Contato</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info reveal-left">
+                <h3 data-key="contact_title">Vamos construir algo juntos?</h3>
+                <p data-key="contact_text">Aberto a conversas sobre projetos, oportunidades de estágio ou simplesmente
+                    trocar uma ideia sobre tecnologia.</p>
+                <div class="contact-links">
+                    <a href="https://discord.com/users/giovendt" class="contact-link-item"><i
+                            class="fab fa-discord"></i> Discord — giovendt</a>
+                    <a href="https://instagram.com/giovendt" class="contact-link-item"><i class="fab fa-instagram"></i>
+                        Instagram — giovendt</a>
+                    <a href="https://github.com/giovendt" class="contact-link-item"><i class="fab fa-github"></i> GitHub
+                        — giovendt</a>
+                </div>
+            </div>
+            <form class="contact-form reveal-right" onsubmit="handleForm(event)">
+                <div class="form-group"><label class="form-label" data-key="form_name">Nome</label><input type="text"
+                        class="form-input" placeholder="Seu nome" required /></div>
+                <div class="form-group"><label class="form-label">E-mail</label><input type="email" class="form-input"
+                        placeholder="seuemail@gmail.com" required /></div>
+                <div class="form-group"><label class="form-label" data-key="form_msg">Mensagem</label><textarea
+                        class="form-textarea" placeholder="Oi gtex, quero falar sobre..." required></textarea></div>
+                <button type="submit" class="btn btn-primary" style="align-self:flex-start"><i
+                        class="fas fa-paper-plane"></i> <span data-key="send">Enviar mensagem</span></button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p><span data-key="footer1">Desenvolvido com</span> <span>♥</span> <span data-key="footer2">por</span>
+            <span>gtex</span> — ETEC © 2025
+        </p>
+        <p style="font-size:1.1rem">HTML · CSS · JS</p>
+    </footer>
+
+    <script>
+        // ========== TRADUÇÕES ==========
+        const translations = {
+            pt: {
+                nav_home: "Home", nav_sobre: "Sobre", nav_skills: "Skills", nav_formacao: "Formação", nav_projetos: "Projetos", nav_contato: "Contato",
+                home_greeting: "// olá, mundo", home_hi: "Olá, eu sou", home_desc: "Estudante técnico em <code>Informática</code> pela ETEC — apaixonado por desenvolvimento de software, soluções criativas e tecnologia que impacta pessoas.",
+                btn_projetos: "Ver Projetos", btn_contato: "Contato", scroll: "Scroll",
+                sobre_label: "Quem sou eu", sobre_title: "mim", sobre_text1: "Sou estudante do <strong>2º ano do Ensino Médio Técnico em Informática</strong> pela rede ETEC, com foco em desenvolvimento de software e tecnologia. Tenho experiência prática em <strong>Python</strong>, estou aprendendo <strong>Java</strong> e me aprofundando em <strong>HTML, CSS e JavaScript</strong>.",
+                sobre_text2: "Além do desenvolvimento, tenho contato com áreas como <strong>banco de dados</strong>, <strong>redes de comunicação</strong>, <strong>sistemas embarcados</strong> e <strong>suporte em TI</strong> — o que me dá uma visão ampla do ecossistema tecnológico.",
+                sobre_text3: "Meu objetivo é crescer como desenvolvedor, construir projetos que resolvam problemas reais e, eventualmente, contribuir para a comunidade open source.",
+                card1_title: "Formação", card1_text: "ETEC — Técnico em Informática · 2º Ano",
+                card2_title: "Foco Principal", card2_text: "Desenvolvimento Web & Software",
+                card3_title: "Localização", card3_text: "Brasil — São Paulo, SP",
+                card4_title: "Status", card4_text: "Aberto a projetos & estágios",
+                skills_label: "O que eu sei", skills_title: "&amp; tools", skills_intro: "Habilidades adquiridas em sala de aula, projetos pessoais e prática contínua — em constante evolução.",
+                lang_category: "Linguagens", infra_category: "Infraestrutura", tools_category: "Ferramentas",
+                skill_sql: "Banco de Dados (SQL)", skill_redes: "Redes de Comunicação", skill_so: "Sistemas Operacionais", skill_emb: "Sistemas Embarcados", skill_hw: "Manutenção de Hardware",
+                form_label: "Histórico acadêmico", form_title: "&amp; disciplinas",
+                date1: "2026 — Cursando", course1: "Ensino Médio Técnico em Informática — ETEC", course1_sub: "2º Ano · Programação de Computadores II · Sistemas Embarcados · Redes",
+                date2: "2025 — Concluído", course2: "1º Ano Técnico — Fundamentos de TI", course2_sub: "Base em programação, hardware e banco de dados",
+                date3: "Em andamento", course3: "Projetos &amp; Aprendizado Autodidata", course3_sub: "Portfólio pessoal · Scripts Python · Estudos de JavaScript",
+                proj_label: "O que eu construí", proj_title: "recentes",
+                proj1_title: "Portfolio Pessoal", proj1_desc: "Este portfólio! Desenvolvido do zero com HTML, CSS puro e JavaScript vanilla — sem frameworks.",
+                proj2_title: "Scripts Python", proj2_desc: "Automações e scripts utilitários desenvolvidos nas aulas de Programação de Computadores I e II.",
+                proj3_title: "Projeto com Java", proj3_desc: "Aplicação desktop em desenvolvimento como parte do aprendizado de Java na ETEC.",
+                proj4_title: "DB Design", proj4_desc: "Modelagem de banco de dados relacional: diagramas ER e implementação SQL.",
+                code: "Código", demo: "Demo", soon_github: "Em breve no github", testing: "Em teste", soon_label: "Em breve",
+                contact_label: "Fale comigo", contact_title: "Vamos construir algo juntos?", contact_text: "Aberto a conversas sobre projetos, oportunidades de estágio ou simplesmente trocar uma ideia sobre tecnologia.",
+                form_name: "Nome", form_msg: "Mensagem", send: "Enviar mensagem",
+                footer1: "Desenvolvido com", footer2: "por"
+            },
+            en: {
+                nav_home: "Home", nav_sobre: "About", nav_skills: "Skills", nav_formacao: "Education", nav_projetos: "Projects", nav_contato: "Contact",
+                home_greeting: "// hello, world", home_hi: "Hi, I'm", home_desc: "Technical student in <code>Informatics</code> at ETEC — passionate about software development, creative solutions, and technology that impacts people.",
+                btn_projetos: "View Projects", btn_contato: "Contact", scroll: "Scroll",
+                sobre_label: "Who I am", sobre_title: "me", sobre_text1: "I am a <strong>2nd year Technical High School student in Informatics</strong> at ETEC, focusing on software development and technology. I have practical experience in <strong>Python</strong>, I'm learning <strong>Java</strong>, and diving deeper into <strong>HTML, CSS and JavaScript</strong>.",
+                sobre_text2: "Beyond development, I have experience with <strong>databases</strong>, <strong>communication networks</strong>, <strong>embedded systems</strong> and <strong>IT support</strong> — which gives me a broad view of the tech ecosystem.",
+                sobre_text3: "My goal is to grow as a developer, build projects that solve real problems, and eventually contribute to the open source community.",
+                card1_title: "Education", card1_text: "ETEC — IT Technician · 2nd Year",
+                card2_title: "Main Focus", card2_text: "Web & Software Development",
+                card3_title: "Location", card3_text: "Brazil — São Paulo, SP",
+                card4_title: "Status", card4_text: "Open to projects & internships",
+                skills_label: "What I know", skills_title: "&amp; tools", skills_intro: "Skills acquired in class, personal projects, and continuous practice — always evolving.",
+                lang_category: "Languages", infra_category: "Infrastructure", tools_category: "Tools",
+                skill_sql: "Database (SQL)", skill_redes: "Communication Networks", skill_so: "Operating Systems", skill_emb: "Embedded Systems", skill_hw: "Hardware Maintenance",
+                form_label: "Academic background", form_title: "&amp; subjects",
+                date1: "2026 — In progress", course1: "Technical High School in Informatics — ETEC", course1_sub: "2nd Year · Computer Programming II · Embedded Systems · Networks",
+                date2: "2025 — Completed", course2: "1st Year Technical — IT Fundamentals", course2_sub: "Basics of programming, hardware and databases",
+                date3: "Ongoing", course3: "Projects & Self‑learning", course3_sub: "Personal portfolio · Python scripts · JavaScript studies",
+                proj_label: "What I built", proj_title: "recent",
+                proj1_title: "Personal Portfolio", proj1_desc: "This portfolio! Built from scratch with vanilla HTML, CSS and JavaScript — no frameworks.",
+                proj2_title: "Python Scripts", proj2_desc: "Automations and utility scripts developed in Computer Programming I and II classes.",
+                proj3_title: "Java Project", proj3_desc: "Desktop application under development as part of my Java learning at ETEC.",
+                proj4_title: "DB Design", proj4_desc: "Relational database modeling: ER diagrams and SQL implementation.",
+                code: "Code", demo: "Demo", soon_github: "Coming soon on github", testing: "Testing", soon_label: "Soon",
+                contact_label: "Talk to me", contact_title: "Let's build something together?", contact_text: "Open to conversations about projects, internship opportunities, or just exchanging ideas about technology.",
+                form_name: "Name", form_msg: "Message", send: "Send message",
+                footer1: "Made with", footer2: "by"
+            }
+        };
+
+        let currentLang = localStorage.getItem('lang') || 'pt';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[lang][key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = translations[lang][key];
+                    } else if (el.classList.contains('home-desc')) {
+                        el.innerHTML = translations[lang][key];
+                    } else {
+                        el.innerText = translations[lang][key];
+                    }
+                }
+            });
+            // Atualiza frases do efeito de digitação
+            typingPhrases = translations[lang].typing_phrases || (lang === 'pt' ?
+                ['Estudante técnico @ ETEC', 'Desenvolvedor Python', 'Aprendiz de web', 'Entusiasta de BD', 'Redes & infra', 'Sempre construindo algo'] :
+                ['Technical student @ ETEC', 'Python developer', 'Web dev learner', 'Database enthusiast', 'Networks & infra student', 'Always building something']);
+            resetTyping();
+        }
+
+        // Typing effect dinâmico
+        let typingPhrases = [];
+        let phIdx = 0, chIdx = 0, deleting = false;
+        const typedEl = document.getElementById('typed-text');
+        function typeLoop() {
+            if (!typingPhrases.length) return;
+            const full = typingPhrases[phIdx];
+            if (!deleting) {
+                typedEl.textContent = full.slice(0, ++chIdx);
+                if (chIdx === full.length) { deleting = true; setTimeout(typeLoop, 2200); return; }
+            } else {
+                typedEl.textContent = full.slice(0, --chIdx);
+                if (chIdx === 0) { deleting = false; phIdx = (phIdx + 1) % typingPhrases.length; }
+            }
+            setTimeout(typeLoop, deleting ? 45 : 80);
+        }
+        function resetTyping() {
+            phIdx = 0; chIdx = 0; deleting = false;
+            typedEl.textContent = '';
+            typeLoop();
+        }
+
+        // Inicialização
+        function initLanguage() {
+            setLanguage(currentLang);
+            document.getElementById('langToggle').addEventListener('click', () => {
+                const newLang = currentLang === 'pt' ? 'en' : 'pt';
+                setLanguage(newLang);
+            });
+        }
+
+        // ========== DEMAIS SCRIPTS ==========
+        // Cursor, scroll bar, header, hamburger, side nav dots, reveal, skill bars, form, etc.
+        // (manter o mesmo código funcional já existente, apenas adicionar a chamada initLanguage)
+        const cursor = document.getElementById('cursor');
+        const ring = document.getElementById('cursor-ring');
+        let mx = 0, my = 0, rx = 0, ry = 0;
+        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+        function animateCursor() {
+            cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+            rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+            ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+        document.querySelectorAll('a,button,.project-card,.about-card,.contact-link-item,.nav-dot,.btn')
+            .forEach(el => { el.addEventListener('mouseenter', () => document.body.classList.add('hovering')); el.addEventListener('mouseleave', () => document.body.classList.remove('hovering')); });
+
+        window.addEventListener('scroll', () => { const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100; document.getElementById('scroll-bar').style.width = pct + '%'; document.getElementById('main-header').classList.toggle('scrolled', window.scrollY > 50); });
+        document.getElementById('hamburger').addEventListener('click', () => { document.getElementById('main-nav').classList.toggle('open'); });
+
+        const sections = ['home', 'sobre', 'habilidades', 'formacao', 'projetos', 'contato'];
+        const navDots = document.querySelectorAll('.nav-dot');
+        const navLinks = document.querySelectorAll('.nav-link');
+        navDots.forEach(dot => { dot.addEventListener('click', () => { document.getElementById(dot.dataset.target).scrollIntoView({ behavior: 'smooth' }); }); });
+        const io = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { const id = entry.target.id; navDots.forEach(d => d.classList.toggle('active', d.dataset.target === id)); navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id)); } }); }, { threshold: 0.4 });
+        sections.forEach(s => { const el = document.getElementById(s); if (el) io.observe(el); });
+
+        const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); entry.target.querySelectorAll('.lang-card').forEach(card => { const pct = card.getAttribute('data-pct'); const fill = card.querySelector('.lang-bar-fill'); if (fill && pct) setTimeout(() => fill.style.width = pct + '%', 150); }); entry.target.querySelectorAll('.skill-item').forEach(item => { const pct = item.getAttribute('data-pct'); const fill = item.querySelector('.skill-bar-fill'); if (fill && pct) setTimeout(() => fill.style.width = pct + '%', 150); }); } }); }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
+
+        function handleForm(e) { e.preventDefault(); const btn = e.target.querySelector('button[type=submit]'); btn.innerHTML = '<i class="fas fa-check"></i> ' + (currentLang === 'pt' ? 'Enviado!' : 'Sent!'); btn.disabled = true; btn.style.opacity = '0.7'; setTimeout(() => { btn.innerHTML = '<i class="fas fa-paper-plane"></i> ' + (currentLang === 'pt' ? 'Enviar mensagem' : 'Send message'); btn.disabled = false; btn.style.opacity = '1'; e.target.reset(); }, 3000); }
+        document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { const target = document.querySelector(a.getAttribute('href')); if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); } }); });
+
+        initLanguage();
+    </script>
+</body>
+
+</html>

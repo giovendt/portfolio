@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML & CSS - gtex Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #050505;
+            --white: #ffffff;
+            --white70: rgba(255, 255, 255, 0.7);
+            --white40: rgba(255, 255, 255, 0.4);
+            --white10: rgba(255, 255, 255, 0.10);
+            --font-main: 'Space Grotesk', 'Poppins', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--white);
+            font-family: var(--font-main);
+            padding: 5rem;
+        }
+
+        .container {
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--white70);
+            font-size: 1.4rem;
+            font-family: var(--font-mono);
+            margin-bottom: 3rem;
+        }
+
+        .back-link:hover {
+            color: var(--white);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+        }
+
+        .skill-name {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .skill-pct {
+            font-size: 2rem;
+            font-family: var(--font-mono);
+            color: var(--white40);
+        }
+
+        .skill-bar-bg {
+            height: 8px;
+            background: var(--white10);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.4));
+            border-radius: 99px;
+            transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .skill-bar-fill::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+
+        .skill-desc {
+            font-size: 1.8rem;
+            color: var(--white70);
+            line-height: 1.7;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 2rem 3%;
+            }
+
+            .skill-name {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="../portfolio_final.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar ao Portfolio</a>
+        <div class="skill-item" data-pct="85">
+            <div class="skill-header">
+                <span class="skill-name">HTML & CSS</span>
+                <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-bar-bg">
+                <div class="skill-bar-fill"></div>
+            </div>
+            <p class="skill-desc">Desenvolvimento deste portfólio! Layouts responsivos, animações CSS, Flexbox/Grid,
+                variáveis CSS e design moderno sem frameworks.</p>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', () => {
+            const fill = document.querySelector('.skill-bar-fill');
+            if (fill) fill.style.width = '85%';
+        });
+    </script>
+</body>
+
+</html>
